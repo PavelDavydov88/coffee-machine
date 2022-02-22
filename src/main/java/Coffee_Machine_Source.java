@@ -11,16 +11,8 @@ public class Coffee_Machine_Source {
         this.coffee = coffee;
     }
 
-    public double getWater() {
-        return water;
-    }
-
     public void setWater(int water) {
         this.water = water;
-    }
-
-    public double getMilk() {
-        return milk;
     }
 
     public void setMilk(int milk) {
@@ -57,21 +49,21 @@ public class Coffee_Machine_Source {
     }
 
     void drink_n(int n, int coffee, int water, int milk){
-        double coffee_drink=n*coffee*0.01;
-        double water_drink=n*water*0.01;
-        double milk_drink=n*milk*0.01;
+        double coffeeDrink=n*coffee*0.01;
+        double waterDrink=n*water*0.01;
+        double milkDrink=n*milk*0.01;
 
         if (n<10) {
             System.out.println("Пожалуйста, введите объем напитка больше 10");
         }
         else {
-            if ((coffee_drink>this.coffee)|(water_drink>this.water)|(milk_drink>this.milk)) {
+            if ((coffeeDrink>this.coffee)|(waterDrink>this.water)|(milkDrink>this.milk)) {
                 System.out.println("Нехватает объема ингредиентов для напитка");
             }
             else {
-                this.coffee-=coffee_drink;
-                this.water-=water_drink;
-                this.milk-=milk_drink;
+                this.coffee-=coffeeDrink;
+                this.water-=waterDrink;
+                this.milk-=milkDrink;
                 System.out.println(format.format(this.coffee)+" "+format.format(this.water)+" "+format.format(this.milk));
             }
 
